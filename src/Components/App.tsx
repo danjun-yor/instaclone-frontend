@@ -5,11 +5,19 @@ import Theme from "../Styles/Theme";
 import AppRouter from "./Router";
 import { useQuery, QueryHookResult } from "react-apollo-hooks";
 import { gql } from "apollo-boost";
+import Footer from "./Footer";
+import styled from "styled-components";
 
 const QUERY = gql`
   {
     isLoggedIn @client
   }
+`;
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 935px;
+  width: 100%;
 `;
 
 const App: React.FC = () => {
@@ -21,8 +29,11 @@ const App: React.FC = () => {
     <>
       <ThemeProvider theme={Theme}>
         <>
-          <GlobalStyles />
-          <AppRouter isLoggedIn={isLoggedIn} />
+          <Wrapper>
+            <GlobalStyles />
+            <AppRouter isLoggedIn={isLoggedIn} />
+            <Footer />
+          </Wrapper>
         </>
       </ThemeProvider>
     </>
