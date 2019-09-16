@@ -52,14 +52,14 @@ export default ({ action, setAction, firstName, lastName, email }: any) => {
       <Form>
         {action === "logIn" ? (
           <form>
-            <Input placeholder={"email"} {...email} />
+            <Input placeholder={"email"} {...email} type="email" />
             <Button text={"Log in"} />
           </form>
         ) : (
           <form>
             <Input placeholder={"First name"} {...firstName} />
             <Input placeholder={"Last name"} {...lastName} />
-            <Input placeholder={"Email"} {...email} />
+            <Input placeholder={"Email"} {...email} type="email" />
             <Button text={"Sign up"} />
           </form>
         )}

@@ -15,17 +15,20 @@ const Input = ({
   placeholder,
   required = true,
   value,
+  type = "text",
   onChange
 }: {
   placeholder: string;
   required?: boolean;
   value: string;
+  type: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) => (
   <Container
     placeholder={placeholder}
     required={required}
     value={value}
+    type={type}
     onChange={onChange}
   />
 );
