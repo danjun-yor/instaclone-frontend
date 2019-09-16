@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import styled from "styled-components";
 
 const Container = styled.input`
@@ -11,8 +11,23 @@ const Container = styled.input`
   padding: 0px 15px;
 `;
 
-const Input = ({ placeholder }: { placeholder: string }) => (
-  <Container placeholder={placeholder} />
+const Input = ({
+  placeholder,
+  required = true,
+  value,
+  onChange
+}: {
+  placeholder: string;
+  required?: boolean;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}) => (
+  <Container
+    placeholder={placeholder}
+    required={required}
+    value={value}
+    onChange={onChange}
+  />
 );
 
 export default Input;
