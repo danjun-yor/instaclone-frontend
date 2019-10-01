@@ -23,7 +23,7 @@ export default () => {
     }
   });
 
-  const onSubmit = async e => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
     if (action === "logIn") {
       if (email.value !== "") {
